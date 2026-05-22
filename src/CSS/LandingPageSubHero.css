@@ -1,0 +1,28 @@
+.subhero-pic-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.subhero-text{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 4rem;
+
+}
+.pic-container{
+    
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+.image2{
+    width:411px;
+height: 447px;
+}
+.image3{
+    width: 719px;
+    height: 417;
+}

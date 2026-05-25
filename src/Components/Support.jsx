@@ -6,7 +6,7 @@ const Support = () => {
     
    <div className='supportpagewrapper'>
      <div className='support-banner'>
-      <h1> Support Page </h1>
+      <h1 className='support-text'> Support Page </h1>
     </div>
      <div className="faq-container">
      

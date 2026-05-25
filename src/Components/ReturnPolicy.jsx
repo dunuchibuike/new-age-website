@@ -4,7 +4,7 @@ import { FaCalendarDays } from "react-icons/fa6";
 import { BiSupport } from 'react-icons/bi';
 import "../CSS/ReturnPolicy.css";
 
-export default function ReturnPolicy() {
+ const ReturnPolicy = () => {
   return (
     <section className="returnPolicySection">
       <header className="policyHeader">
@@ -50,3 +50,4 @@ export default function ReturnPolicy() {
     </section>
   );
 }
+export default ReturnPolicy;

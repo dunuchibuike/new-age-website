@@ -5,13 +5,25 @@ import ReturnPolicy from '../Components/ReturnPolicy'
 import Header from '../Components/Header'
 import HeaderText from '../Components/HeaderText'
 import NewAgeHeader from '../Components/NewAgeHeader'
+import ShippingInfo from '../Components/ShippingInfo'
+import Warranty from '../Components/Warranty'
+import ContactCta from '../Components/ContactCta'
+import FilterByHeader from '../Components/FilterByHeader'
+import Footer from '../Components/Footer'
+
 const SupportPage = () => {
   return (
     <div>
       <HeaderText/>
       <NewAgeHeader/>
+      <FilterByHeader/>
       <Support/>
       <ReturnPolicy/>
+      <ShippingInfo/>
+      <Warranty/>
+      <ContactCta/>
+      <Footer/>
+      
     </div>
   )
 }

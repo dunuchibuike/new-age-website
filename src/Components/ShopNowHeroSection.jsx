@@ -1,0 +1,26 @@
+import React from 'react'
+
+import '../CSS/ShopNowHeroSection.css'
+
+
+const ShopNowHeroSection = () => {
+ 
+
+  return (
+    <section className="hero-section">
+      <img src="/src/assets/ShopnowHero2.png" alt="Power That Moves With You" className="hero-img" />
+      <div className="hero-content">
+        <h1 className="hero-title">Power That Moves <br /> With You</h1>
+        <p className="hero-desc">
+          Fast, reliable, and built for your everyday hustle. Stay charged <br />
+          wherever life takes you with NewAge Chargers.
+        </p>
+        <button className="hero-btn">
+          Shop Now
+        </button>
+      </div>
+    </section>
+  )
+}
+
+export default ShopNowHeroSection

@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.affiliate-page {
+  width: 100%;
+  background: #ffffff;
+  color: #222;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HERO */
+
+.affiliate-hero {
+  position: relative;
+  height: 420px;
+  background-image: url("https://i.postimg.cc/dtQrsNg8/Affiliate.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+
+.affiliate-content {
+  width: 90%;
+  max-width: 90%;
+  margin: auto;
+  padding: 70px 0;
+}
+
+.content-block {
+  margin-bottom: 45px;
+}
+
+.content-block h2 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  color: #111;
+}
+
+.content-block p {
+  line-height: 1.9;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* BENEFITS */
+
+.benefits-section {
+  margin-top: 40px;
+}
+
+.benefits-section h2 {
+  margin-bottom: 25px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.benefit-item svg {
+  color: #ff6b00;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.benefit-item p {
+  color: #444;
+  line-height: 1.7;
+}
+
+/* NOTE */
+
+.note-box {
+  margin-top: 50px;
+  padding: 25px;
+  border-left: 4px solid #ff6b00;
+  background: #fff7f2;
+  border-radius: 10px;
+}
+
+.note-box p {
+  color: #444;
+  line-height: 1.8;
+}
+
+/* FAQ */
+
+.faq-section {
+  width: 100%;
+  background: #fafafa;
+  padding: 90px 20px;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-header h1 {
+  font-size: 3rem;
+  color: #ff6b00;
+  margin-bottom: 15px;
+}
+
+.faq-header p {
+  color: #666;
+}
+
+.faq-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-card {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  transition: 0.3s ease;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.faq-question span {
+  color: #ff6b00;
+  font-size: 0.9rem;
+}
+
+.faq-answer {
+  padding: 0 22px 22px;
+}
+
+.faq-answer p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .faq-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .content-block h2 {
+    font-size: 1.2rem;
+  }
+}
+.affiliate-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+
+  width: 300px;
+  max-width: 90%;
+
+  background: #ffffff;
+  padding: 28px;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  animation: floatIn 0.6s ease;
+}
+
+.affiliate-popup h3 {
+  color: #ff6b00;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.affiliate-popup p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .affiliate-popup {
+    width: 90%;
+    padding: 22px;
+  }
+
+  .affiliate-popup h3 {
+    font-size: 1.1rem;
+  }
+
+  .affiliate-popup p {
+    font-size: 0.95rem;
+  }
+}

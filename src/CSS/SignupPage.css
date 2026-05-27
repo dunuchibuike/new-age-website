@@ -210,3 +210,37 @@
   text-decoration: underline;
 }
 
+
+.error-text {
+  color: red;
+  font-size: 0.78rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.input-error {
+  border-color: red;
+}
+
+.strength-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.strength-bar {
+  height: 5px;
+  border-radius: 4px;
+  flex: 1;
+  transition: background 0.3s, width 0.3s;
+}
+
+.strength-bar.weak   { background: red;    width: 30%; }
+.strength-bar.medium { background: orange; width: 60%; }
+.strength-bar.strong { background: green;  width: 100%; }
+
+.strength-label        { font-size: 0.78rem; font-weight: 700; }
+.strength-label.weak   { color: red; }
+.strength-label.medium { color: orange; }
+.strength-label.strong { color: green; }

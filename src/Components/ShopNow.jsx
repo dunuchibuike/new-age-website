@@ -15,7 +15,8 @@ const ShopNow = () => {
     const getProducts = async () => {
       setLoading(true)
       try {
-        const response = await axios.get(`${BaseUrl}/products`)
+        const response = await axios.get(`${BaseUrl}/get-all-products`)
+        console.log('response:', response) // Log the entire response object
         console.log(response.data)
         const data = response.data
         setProducts(Array.isArray(data) ? data : data.data || data.products || data.result || [])
@@ -27,6 +28,8 @@ const ShopNow = () => {
     }
     getProducts()
   }, [])
+
+
 
   const toggleWishlist = (id) => {
     setWishlist(prev =>

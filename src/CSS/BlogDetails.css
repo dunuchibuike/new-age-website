@@ -1,0 +1,169 @@
+.blogDetailsLayout {
+  font-family: Arial, sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 40px 60px 40px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.blogDetailsContainer {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogInlineImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.blogInlineImage {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+}
+
+.blogDetailsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.blogSectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blogBlockHeading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.blogSectionBlock p {
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.highlightOrange {
+  color: #ff5500;
+  font-size: 13.5px;
+}
+
+.blogBulletList {
+  margin: 0;
+  padding: 0 0 0 24px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blogBulletList li {
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.5;
+  position: relative;
+}
+
+.blogBulletList li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+  top: -1px;
+  color: #111111;
+  font-size: 14px;
+}
+
+.blogFooterSignature {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 32px;
+  margin-top: 16px;
+}
+
+.blogFooterSignature p {
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.blogMetaFooter {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 16px;
+}
+
+.metaFooterItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffa17a;
+}
+
+.metaIcon {
+  font-size: 15px;
+}
+
+.metaLabelText {
+  font-size: 15px;
+  color: #444444;
+}
+
+.commentFormSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.commentSectionTitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #444444;
+  margin: 0;
+}
+
+.commentTextAreaField {
+  width: 100%;
+  max-width: 440px;
+  height: 110px;
+  border: 1px solid #e2e8f0;
+  background-color: #f7f7f9;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 14px;
+  color: #111111;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.commentSubmitBtn {
+  background-color: #ff5500;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}

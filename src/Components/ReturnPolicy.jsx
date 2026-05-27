@@ -22,7 +22,7 @@ import "../CSS/ReturnPolicy.css";
           </div>
           <h3 className="cardTitle">01. Return Eligibility</h3>
           <p className="cardBody">
-            You can request a return if the product is faulty, damaged, or not as described.
+            You can request a return if the  product is faulty, damaged, or not as  described.
           </p>
         </article>
 

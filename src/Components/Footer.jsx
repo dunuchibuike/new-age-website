@@ -81,7 +81,7 @@ const Footer = () => {
       <div className="footer-divider"></div>
 
       <div className="footer-bottom">
-        <div className="footer-big-logo"> NEW AGE</div>
+        <div className="footer-big-logo"> <img src="/src/assets/newage.png" alt="" /></div>
         <p className="footer-copy">© 2026 NewAge Mobile Concepts limited.</p>
       </div>
 

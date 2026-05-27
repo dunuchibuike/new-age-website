@@ -1,0 +1,77 @@
+.tabsSection {
+  font-family: Arial, sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.tabsHeaderNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 56px;
+  width: 100%;
+}
+
+.tabLinkItem {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: #111111;
+  cursor: pointer;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tabLinkItem.tabActive {
+  color: #ff5500;
+}
+
+.tabMainContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.leadDescriptionText {
+  font-size: 15px;
+  color: #333333;
+  margin: 0 0 36px 0;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.contentBlockParagraph {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.contentBlockParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.blockHeadingTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.blockBodyText {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.7;
+  margin: 0;
+  width: 100%;
+}

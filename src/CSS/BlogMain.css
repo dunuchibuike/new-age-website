@@ -1,0 +1,191 @@
+.blogMainLayout {
+  font-family: Arial, sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.blogMainContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogHeroImageWrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.blogHeroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blogPostTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 28px 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.blogParagraphGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.blogParagraphGroup p,
+.blogArticleSection p {
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.highlightOrange {
+  color: #ff5500;
+}
+
+.blogArticleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blogSectionHeading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  margin: 10px 0 4px 0;
+  line-height: 1.4;
+}
+
+.blogSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.sidebarSearchBox {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 42px;
+}
+
+.sidebarSearchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #111111;
+  height: 100%;
+}
+
+.sidebarSearchInput::placeholder {
+  color: #aaaaaa;
+}
+
+.sidebarSearchBtn {
+  background-color: #ff5500;
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.recentPostsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebarWidgetTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.recentPostsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recentPostCard {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #f1f2f4;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.recentPostThumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.recentPostMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recentPostTitleText {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.recentPostDate {
+  font-size: 11px;
+  color: #888888;
+}
+
+.recentPostIcons {
+  display: flex;
+  gap: 14px;
+  color: #ffa17a;
+}
+
+.recentPostIcons span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaIcon {
+  font-size: 12px;
+}
+
+.metaLabelText {
+  font-size: 12px;
+  color: #444444;
+}

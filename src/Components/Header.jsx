@@ -5,14 +5,17 @@ import Input from '../Props/Input';
 import HeaderText from './HeaderText';
 import NewAgeHeader from './NewAgeHeader';
 import FilterByHeader from './FilterByHeader';
-const Header = () => {
+const Header = ({ children }) => {
   
   return (
     <>
-     
+     <div className="fixed-header-container">
       <HeaderText/>
       <NewAgeHeader/>
       <FilterByHeader/>
+
+      <div className="header-content-slot">{children}</div>
+      </div>
     </>
   )
 }

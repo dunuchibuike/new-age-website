@@ -5,16 +5,16 @@ import { FaWhatsapp, FaStar } from 'react-icons/fa'
 import '../CSS/Carousel.css'
 
 const products = [
-  { id: 1,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 2,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 3,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 4,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 5,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 6,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 7,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 8,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 9,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
-  { id: 10, name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '', bulkAvailable: true },
+  { id: 1,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (1).png', bulkAvailable: true },
+  { id: 2,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (2).png', bulkAvailable: true },
+  { id: 3,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (4).png', bulkAvailable: true },
+  { id: 4,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (2).png', bulkAvailable: true },
+  { id: 5,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (4).png', bulkAvailable: true },
+  { id: 6,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (1).png', bulkAvailable: true },
+  { id: 7,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (4).png', bulkAvailable: true },
+  { id: 8,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (1).png', bulkAvailable: true },
+  { id: 9,  name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (2).png', bulkAvailable: true },
+  { id: 10, name: 'Iron Man Mini', price: 13200, rating: 5, reviews: 567, compatible: ['iPhone', 'Android', 'Tablet', 'Laptop'], image: '/src/assets/image (4).png', bulkAvailable: true },
 ]
 
 const CARDS_PER_VIEW = 4

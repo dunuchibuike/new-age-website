@@ -1,7 +1,8 @@
 import React from "react";
 import "../CSS/Footer.css";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const nav =useNavigate()
   return (
      <footer className="footer">
 
@@ -36,7 +37,9 @@ const Footer = () => {
             <li><a href="#">Track Order</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Support</a></li>
-            <li><a href="#">Affiliate</a></li>
+            <li
+            onClick={() => nav("/affiliate")}
+            ><a href="#">Affiliate</a></li>
             <li><a href="#">FAQ's</a></li>
           </ul>
         </div>
@@ -81,7 +84,7 @@ const Footer = () => {
       <div className="footer-divider"></div>
 
       <div className="footer-bottom">
-        <div className="footer-big-logo"> NEW AGE</div>
+        <div className="footer-big-logo"> <img src="/src/assets/newage.png" alt="" /></div>
         <p className="footer-copy">© 2026 NewAge Mobile Concepts limited.</p>
       </div>
 

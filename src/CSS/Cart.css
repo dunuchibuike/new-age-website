@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page {
+  font-family: 'DM Sans', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.savings-banner {
+  font-size: 14px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.savings-amount {
+  color: #e55a00;
+  font-weight: 600;
+}
+
+.cart-table {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.cart-header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1.4fr 1.2fr;
+  background: #f0f0f0;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #444;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1.4fr 1.2fr;
+  align-items: center;
+  padding: 14px 16px;
+  border-top: 1px solid #e5e5e5;
+  background: #fafafa;
+}
+
+.cart-row:nth-child(odd) {
+  background: #fff;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e8e8e8;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.cart-amount {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.qty-btn {
+  background: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.qty-btn:hover {
+  background: #f0f0f0;
+}
+
+.qty-value {
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 28px;
+  text-align: center;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.cart-subtotal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e04343;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.delete-btn:hover {
+  background: #ffeaea;
+}
+
+.order-summary {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #444;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-total {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  padding-top: 14px;
+}
+
+.checkout-btn {
+  display: block;
+  width: 340px;
+  padding: 16px;
+  background: #e55a00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+  transition: background 0.18s;
+}
+
+.checkout-btn:hover {
+  background: #c94d00;
+}
+
+.order-note {
+  margin-bottom: 24px;
+}
+
+.note-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.note-textarea {
+  width: 340px;
+  height: 90px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #444;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.note-textarea:focus {
+  border-color: #e55a00;
+}
+
+.note-textarea::placeholder {
+  color: #aaa;
+}
+
+.back-btn {
+  background: #e55a00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.back-btn:hover {
+  background: #c94d00;
+}

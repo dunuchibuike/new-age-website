@@ -19,7 +19,7 @@ const ShippingInfo = () => {
           <article className="infoCard">
             <h3 className="cardHeader">Delivery Coverage</h3>
             <p className="cardText textRight">
-              We deliver across Nigeria, bringing your orders straight to your location.
+              We deliver across <br /> Nigeria, bringing your  <br />orders straight to your <br /> location.
             </p>
             <span className="bgNumber leftSide">01</span>
           </article>
@@ -27,7 +27,7 @@ const ShippingInfo = () => {
           <article className="infoCard">
             <h3 className="cardHeader">Delivery Timeline</h3>
             <p className="cardText textRight">
-              Orders typically arrive within 2-5 business days, depending on your location.
+              Orders typically arrive <br /> within 2-5 business <br /> days, depending on <br /> your location.
             </p>
             <span className="bgNumber leftSide">02</span>
           </article>
@@ -35,7 +35,7 @@ const ShippingInfo = () => {
           <article className="infoCard">
             <h3 className="cardHeader">Shipping Fees</h3>
             <p className="cardText textLeft">
-              Delivery fees are calculated at checkout based on your location.
+              Delivery fees are <br /> calculated at <br /> checkout based on  <br />your location.
             </p>
             <span className="bgNumber rightSide">03</span>
           </article>
@@ -43,7 +43,7 @@ const ShippingInfo = () => {
           <article className="infoCard">
             <h3 className="cardHeader">Order Processing</h3>
             <p className="cardText textLeft">
-              Orders are processed within 24 hours after confirmation.
+              Orders are processed  <br />within 24 hours after <br /> confirmation.
             </p>
             <span className="bgNumber rightSide">04</span>
           </article>

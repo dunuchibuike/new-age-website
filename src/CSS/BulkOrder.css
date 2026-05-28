@@ -1,0 +1,105 @@
+.bulkOrderSection {
+  font-family: Arial, sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.tableContainer {
+  width: 100%;
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #f2f2f4;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+}
+
+.tableMainTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 35px 0;
+  text-align: center;
+}
+
+.priceListTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.priceListTable th {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f2f2f4;
+}
+
+.priceListTable td {
+  font-size: 14px;
+  color: #444444;
+  padding: 22px 24px;
+  border-bottom: 1px solid #f8f8fa;
+}
+
+.priceListTable tr:last-child td {
+  border-bottom: none;
+}
+
+.columnLeft {
+  text-align: left;
+  width: 33.33%;
+}
+
+.columnCenter {
+  text-align: center;
+  width: 33.33%;
+}
+
+.columnRight {
+  text-align: right;
+  width: 33.33%;
+}
+
+.protectedWarrantyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.protectedWarrantyTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.protectedWarrantyDesc {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0 0 45px 0;
+}
+
+.protectedBadgeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.protectedBadgeImage {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+}

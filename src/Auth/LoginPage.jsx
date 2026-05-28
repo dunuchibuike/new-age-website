@@ -3,17 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { FaFacebook, FaApple } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import { useCart } from '../Context/CartContext'
 import '../CSS/LoginPage.css'
 
 const BaseUrl = import.meta.env.VITE_BASE_URL
 
 const LoginPage = () => {
   const nav = useNavigate()
+  const { reloadCart } = useCart()
 
-  const [login, setLogin] = useState({
-    email: '',
-    password: '',
-  })
+  const [login, setLogin] = useState({ email: '', password: '' })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,15 +23,18 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
+    setError('')
     try {
       const response = await axios.post(`${BaseUrl}/customer/login`, login)
       localStorage.setItem('token', response.data.token)
-      console.log(response.data)
-      alert('Login successful!')
-      nav('/')
+      localStorage.setItem('user', JSON.stringify(response.data.customer))
+      nav('/')          
+      reloadCart()    
     } catch (err) {
-      console.log(err.response.data)
-      alert('Something went wrong, try again')
+      setError('Invalid email or password')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -63,6 +67,8 @@ const LoginPage = () => {
           />
         </div>
 
+        {error && <p className="login-error">{error}</p>}
+
         <div className="login-options">
           <label className="remember-me">
             <input type="checkbox" />
@@ -71,7 +77,13 @@ const LoginPage = () => {
           <a href="#" className="forgot-password">Forget Password?</a>
         </div>
 
-        <button className="login-btn" onClick={handleSubmit}>Log In</button>
+        <button
+          className="login-btn"
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? 'Logging in...' : 'Log In'}
+        </button>
 
         <div className="login-divider">
           <span></span>
@@ -87,7 +99,7 @@ const LoginPage = () => {
 
         <p className="login-signup">
           Don't Have an account?{' '}
-          <a href="#" onClick={() => nav('/signup')}>Sign Up</a>
+          <a href="#" onClick={() => nav('/signUp')}>Sign Up</a>
         </p>
 
       </div>

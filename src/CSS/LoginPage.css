@@ -172,3 +172,15 @@
 .label{
     font-family: var(--font-family);
 }
+
+.login-error {
+  color: red;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

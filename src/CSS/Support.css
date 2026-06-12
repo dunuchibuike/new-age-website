@@ -25,7 +25,6 @@
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-
 .faq-sidebar {
   display: flex;
   flex-direction: column;
@@ -46,7 +45,6 @@
   line-height: 1.5;
   margin: 0;
 }
-
 
 .faq-cta-card {
   margin-top: 20px;
@@ -86,7 +84,6 @@
 .faq-btn:hover {
   background-color: #e04b00;
 }
-
 
 .faq-accordion-list {
   display: flex;
@@ -132,6 +129,37 @@
   color: #1c1c1e;
   font-weight: 300;
 }
-.support-text{
+
+.support-text {
   font-size: larger;
+}
+
+
+
+.faq-item--open {
+  background-color: #ff5500;
+  border-color: #ff5500;
+}
+
+.faq-item--open:hover {
+  background-color: #ff5500;
+}
+
+.faq-item--open .faq-number {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.faq-item--open .faq-question {
+  color: #ffffff;
+}
+
+.faq-item--open .faq-icon {
+  color: #ffffff;
+}
+
+.faq-answer {
+  padding: 0 24px 22px 64px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.6;
 }

@@ -1,0 +1,211 @@
+.account-page {
+  width: 100%;
+  height: 100vh;
+  background:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.account-holder{
+  width:100%;
+  height:70vh;
+  /* background-color: rgb(236, 232, 5); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-container {
+  width: 90%;
+  height:90%;
+  /* background-color: darkcyan; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  
+}
+
+.title-section {
+  /* margin-bottom: 45px; */
+  width:100%;
+  height:18%;
+  /* background-color: darkblue; */
+}
+
+.title-section h1 {
+  font-size: 42px;
+  color: #111;
+  
+}
+
+.title-section p {
+  color: #666;
+  font-size: 15px;
+}
+
+
+.profile-section {
+  width:100%;
+  height:40%;
+  /* background-color: firebrick; */
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 30%;
+  object-fit: cover;
+}
+
+.profile-details h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.upload-btn,
+.remove-btn {
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn {
+  background: #df5a0d;
+  color: white;
+  border: none;
+}
+
+.remove-btn {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.support-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.settings-form {
+ width:100%;
+ height:50%;
+ /* background-color: deepskyblue;   */
+ display: flex;
+ justify-content: space-between;
+}
+.settings-right{
+  width:48%;
+  height:100%;
+  /* background-color: azure; */
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+}
+.settings-left{
+  width:48%;
+  height:100%;
+  /* background-color: rgb(75, 237, 237); */
+   display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.group-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.group-form input,
+.group-form select {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+  /* padding: 0 18px; */
+  font-size: 15px;
+  outline: none;
+}
+
+.group-form input:focus,
+.group-form select:focus {
+  border: 1px solid #df5a0d;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 18px;
+  
+}
+
+.save-btn,
+.delete-btn {
+  height: 45px;
+  padding: 0 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-btn {
+  background: #df5a0d;
+  color: white;
+  border: none;
+}
+
+.delete-btn {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+
+@media (max-width: 768px) {
+  .account-container {
+    width: 92%;
+  }
+
+  .title-section h1 {
+    font-size: 32px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .save-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

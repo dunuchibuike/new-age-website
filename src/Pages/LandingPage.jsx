@@ -10,8 +10,9 @@ import PromoBanner from '../Components/PromoBanner'
 import Footer from '../Components/Footer'
 const LandingPage = () => {
   return (
-    <div>
+    <div  className="page-wrapper">
    <Header/>
+   <div className="main-content">
     <LandingPageHero/>
     <LandingPageSubHero/>
     <Carousel/>
@@ -20,6 +21,8 @@ const LandingPage = () => {
     <LatestArticles/>
     <PromoBanner/>
     <Footer/>
+
+    </div>
     </div>
   )
 }

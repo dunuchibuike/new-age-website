@@ -1,12 +1,16 @@
-import React from 'react';
-import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaUndo } from 'react-icons/fa';
-import '../CSS/OrderConfirmation.css';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaUndo } from 'react-icons/fa'
+import '../CSS/OrderConfirmation.css'
 
 const OrderConfirmation = () => {
+  const nav = useNavigate()
+  const user = JSON.parse(localStorage.getItem('user') || '{}')
+
   return (
     <section className="confirmationSection">
       <div className="confirmationContainer">
-        
+
         <div className="stepperContainer">
           <div className="stepItem activeStep">
             <span className="stepIcon"><FaCheck className="orangeCheckIcon" /></span>
@@ -29,21 +33,23 @@ const OrderConfirmation = () => {
         </div>
 
         <h2 className="confirmationTitle">Order Confirmed!</h2>
-        
+
         <p className="confirmationMessage">
-          Your order has been confirmed,Thanks for your Patronage.
+          Your order has been confirmed. Thanks for your Patronage.
         </p>
-        
+
         <div className="emailNoticeBox">
           <p className="emailNoticeText">A confirmation Email has been sent to</p>
-          <p className="customerEmail">eberesunday688@gmail.com</p>
+          <p className="customerEmail">{user.email || 'your email'}</p>
         </div>
 
-        <button className="continueShoppingBtn">Continue Shopping</button>
+        <button className="continueShoppingBtn" onClick={() => nav('/Shop')}>
+          Continue Shopping
+        </button>
 
         <div className="featuresFooterGrid">
-          
-          <div className="featureFooterCard">
+
+          <div className="featureFooterCard" onClick={() => nav('/track-order')}>
             <div className="featureFooterIconBox">
               <FaMapMarkerAlt />
             </div>
@@ -77,7 +83,7 @@ const OrderConfirmation = () => {
 
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OrderConfirmation;
+export default OrderConfirmation

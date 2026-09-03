@@ -776,3 +776,247 @@
     height: 48px;
   }
 }
+
+/* Tablet and small-screen layout safeguards. These rules deliberately use
+   fluid grid tracks so pages stay inside the viewport between breakpoints. */
+@media (max-width: 1024px) {
+  .sn-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .shippingSection,
+  .confirmationSection {
+    padding-inline: 32px;
+  }
+
+  .shippingSidebar {
+    width: min(31%, 300px);
+  }
+
+  .shippingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featuresFooterGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .featureFooterCard {
+    min-width: 0;
+    padding: 14px;
+  }
+
+  .featureFooterDesc {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body,
+  #root {
+    min-width: 0;
+  }
+
+  .third-semi-container {
+    align-items: stretch;
+  }
+
+  .filter-container,
+  .sort-container {
+    display: none;
+  }
+
+  .search-container {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .search-input {
+    flex: 1 1 auto;
+  }
+
+  .searchiconcontainer {
+    flex: 0 0 50px;
+  }
+
+  .hero-section {
+    height: 560px;
+    min-height: 0;
+    background: #e6ddd3;
+  }
+
+  .hero-img {
+    object-position: 72% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(240, 233, 225, .18), rgba(240, 233, 225, .04));
+  }
+
+  .hero-content {
+    top: auto;
+    right: 16px;
+    bottom: 24px;
+    left: 16px;
+    max-width: none;
+    transform: none;
+    gap: 12px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .82);
+    box-shadow: 0 10px 30px rgba(38, 29, 23, .14);
+    backdrop-filter: blur(5px);
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 8.5vw, 2.5rem);
+    line-height: 1.06;
+  }
+
+  .hero-title br,
+  .hero-desc br {
+    display: none;
+  }
+
+  .hero-desc {
+    font-size: .92rem;
+    line-height: 1.55;
+  }
+
+  .hero-btn {
+    width: 100%;
+    margin-top: 4px;
+    padding-block: 13px;
+  }
+
+  .sn-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sn-card,
+  .likeProductCard,
+  .policyCard,
+  .infoCard {
+    min-width: 0;
+  }
+
+  .sn-name,
+  .product-name,
+  .featureFooterTitle {
+    overflow-wrap: anywhere;
+  }
+
+  .footer-col ul li a {
+    display: inline-block;
+    padding-block: 4px;
+  }
+
+  .footer-form button {
+    width: 100%;
+  }
+
+  .contact-page__intro {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-second-container {
+    padding-inline: 12px;
+  }
+
+  .second-header-article-container > div:first-child img {
+    width: min(128px, 40vw);
+  }
+
+  .third-header-article {
+    gap: 9px;
+  }
+
+  .sn-section {
+    padding-inline: 12px;
+  }
+
+  .sn-info {
+    padding: 12px;
+  }
+
+  .sn-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px 42px;
+    gap: 6px;
+  }
+
+  .sn-btn-cart {
+    min-width: 0;
+    font-size: .78rem;
+    padding-inline: 6px;
+  }
+
+  .shippingSection,
+  .confirmationSection {
+    padding-inline: 16px;
+  }
+
+  .confirmationMessage,
+  .emailNoticeText {
+    max-width: 32ch;
+  }
+
+  .footer-top {
+    padding-inline: 16px;
+  }
+
+  .footer-divider {
+    width: calc(100% - 32px);
+    margin-inline: 16px;
+  }
+
+  .footer-bottom {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .filter-container,
+  .sort-container {
+    font-size: .85rem;
+  }
+
+  .sn-actions {
+    grid-template-columns: 1fr 42px 42px;
+  }
+
+  .hero-section {
+    height: 500px;
+  }
+
+  .hero-content {
+    right: 12px;
+    bottom: 16px;
+    left: 12px;
+    padding: 18px;
+  }
+
+  .sn-btn-cart {
+    font-size: .76rem;
+  }
+
+  .footer-form button,
+  .contact-page__form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .sn-grid {
+    grid-template-columns: 1fr;
+  }
+}

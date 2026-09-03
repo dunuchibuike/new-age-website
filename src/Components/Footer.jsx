@@ -1,6 +1,13 @@
 import { useState } from "react";
 import "../CSS/Footer.css";
 import { Link } from "react-router-dom";
+
+const FooterLink = ({ to, children }) => (
+  <Link to={to} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
+    {children}
+  </Link>
+);
+
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -40,12 +47,12 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Quick Links</h4>
           <ul>
-            <li><Link to="/blog">Blog &amp; Article</Link></li>
-            <li><Link to="/track-order">Track Order</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/support">Support</Link></li>
-            <li><Link to="/affiliate">Affiliate</Link></li>
-            <li><Link to="/support#faq">FAQ's</Link></li>
+            <li><FooterLink to="/blog">Blog &amp; Article</FooterLink></li>
+            <li><FooterLink to="/track-order">Track Order</FooterLink></li>
+            <li><FooterLink to="/about-us">About Us</FooterLink></li>
+            <li><FooterLink to="/support">Support</FooterLink></li>
+            <li><FooterLink to="/affiliate">Affiliate</FooterLink></li>
+            <li><FooterLink to="/support">FAQ's</FooterLink></li>
           </ul>
         </div>
 
@@ -53,13 +60,13 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Shop</h4>
           <ul>
-            <li><Link to="/shop">All Products</Link></li>
-            <li><Link to="/shop?category=smartwatches">Smartwatches</Link></li>
-            <li><Link to="/shop?category=jumpstarters">Jumpstarters</Link></li>
-            <li><Link to="/shop?category=powerbanks">Powerbanks</Link></li>
-            <li><Link to="/shop?category=charger">Charger</Link></li>
-            <li><Link to="/shop?category=audios">Audios</Link></li>
-            <li><Link to="/shop?category=cables">Cables</Link></li>
+            <li><FooterLink to="/shop">All Products</FooterLink></li>
+            <li><FooterLink to="/shop?category=smartwatches">Smartwatches</FooterLink></li>
+            <li><FooterLink to="/shop?category=jumpstarters">Jumpstarters</FooterLink></li>
+            <li><FooterLink to="/shop?category=powerbanks">Powerbanks</FooterLink></li>
+            <li><FooterLink to="/shop?category=charger">Charger</FooterLink></li>
+            <li><FooterLink to="/shop?category=audios">Audios</FooterLink></li>
+            <li><FooterLink to="/shop?category=cables">Cables</FooterLink></li>
           </ul>
         </div>
 
@@ -67,9 +74,9 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Help</h4>
           <ul>
-            <li><Link to="/return-policy">Refund &amp; Return Policy</Link></li>
-            <li><Link to="/terms-and-conditions">Terms &amp; Condition</Link></li>
-            <li><Link to="/contact-us">Contact Us</Link></li>
+            <li><FooterLink to="/return-policy">Refund &amp; Return Policy</FooterLink></li>
+            <li><FooterLink to="/terms-and-conditions">Terms &amp; Condition</FooterLink></li>
+            <li><FooterLink to="/contact-us">Contact Us</FooterLink></li>
           </ul>
         </div>
 

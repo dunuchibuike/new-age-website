@@ -20,11 +20,13 @@ import ProductDetailedPage from "./Pages/ProductDetailedPage";
 import TrackOrderPage from "./Pages/TrackOrderPage";
 import ReturnPolicyPage from "./Pages/ReturnPolicyPage";
 import TermsPage from "./Pages/TermsPage";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Aboutus" element={<AboutUs />} />

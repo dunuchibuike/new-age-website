@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { FaFacebook, FaApple } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useCart } from '../Context/CartContext'
 import '../CSS/LoginPage.css'
 
@@ -15,6 +16,7 @@ const LoginPage = () => {
   const [login, setLogin] = useState({ email: '', password: '' })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -58,13 +60,24 @@ const LoginPage = () => {
 
         <div className="login-field">
           <p className="label">Password</p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Input password"
-            value={login.password}
-            onChange={handleChange}
-          />
+          <div className="login-password-input">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              placeholder="Input password"
+              value={login.password}
+              onChange={handleChange}
+            />
+            <button
+              type="button"
+              className="login-password-toggle"
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              aria-pressed={showPassword}
+              onClick={() => setShowPassword((isVisible) => !isVisible)}
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </button>
+          </div>
         </div>
 
         {error && <p className="login-error">{error}</p>}

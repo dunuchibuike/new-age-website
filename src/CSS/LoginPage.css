@@ -59,6 +59,34 @@
   color: #bbb;
 }
 
+.login-password-input {
+  position: relative;
+}
+
+.login-password-input input {
+  padding-right: 48px;
+}
+
+.login-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-password-toggle:hover,
+.login-password-toggle:focus-visible {
+  color: #ff5500;
+}
+
 .login-options {
   width: 100%;
   display: flex;

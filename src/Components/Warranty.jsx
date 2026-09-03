@@ -2,7 +2,7 @@ import React from 'react';
 import { FiBox } from 'react-icons/fi';
 import { BsCalendar4Event } from 'react-icons/bs';
 import { BiSupport } from 'react-icons/bi';
-import warrantyImg from '../assets/warranty.png';
+const warrantyImg = '/images/warranty.png'
 import '../CSS/Warranty.css';
 
 const Warranty = () => {

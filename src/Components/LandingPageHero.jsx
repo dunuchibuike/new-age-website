@@ -4,7 +4,7 @@ const LandingPageHero = () => {
   return (
     <>
     <div>
-      <img src="/src/assets/hero.png" alt="image" className='hero-picture'/>
+      <img src="/images/hero.png" alt="image" className='hero-picture'/>
     </div>
     </>
   )

@@ -1,0 +1,19 @@
+.contact-page { width: min(1120px, calc(100% - 40px)); margin: 70px auto; color: #27211f; }
+.contact-page__intro { max-width: 640px; margin-bottom: 48px; }
+.contact-page__eyebrow { margin: 0 0 12px; color: #ff5000; font-size: .8rem; font-weight: 700; letter-spacing: .1em; }
+.contact-page h1, .contact-page h2, .contact-page h3, .contact-page p { margin-top: 0; }
+.contact-page h1 { margin-bottom: 16px; font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.05; }
+.contact-page__intro > p:last-child, .contact-page__details p { color: #655d58; line-height: 1.65; }
+.contact-page__content { display: grid; grid-template-columns: minmax(250px, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
+.contact-page__details { padding: 32px; border-radius: 16px; background: #fff0e9; }
+.contact-page__details h2 { margin-bottom: 30px; font-size: 1.55rem; }
+.contact-page__details div + div { margin-top: 26px; }
+.contact-page__details h3 { margin-bottom: 7px; font-size: .95rem; }
+.contact-page__details a { color: #d94700; font-weight: 600; text-decoration: none; }
+.contact-page__form { display: grid; gap: 18px; padding: 34px; border: 1px solid #e6e1de; border-radius: 16px; }
+.contact-page__form label { display: grid; gap: 8px; color: #413b38; font-size: .92rem; font-weight: 600; }
+.contact-page__form input, .contact-page__form textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #d8d2cf; border-radius: 7px; color: #27211f; font: inherit; resize: vertical; }
+.contact-page__form input:focus, .contact-page__form textarea:focus { outline: 2px solid #ff5000; outline-offset: 1px; }
+.contact-page__form button { justify-self: start; padding: 13px 24px; border: 0; border-radius: 7px; background: #ff5000; color: #fff; cursor: pointer; font: inherit; font-weight: 700; }
+.contact-page__success { margin: 0; color: #207044; font-weight: 600; }
+@media (max-width: 720px) { .contact-page { width: calc(100% - 32px); margin: 42px auto; } .contact-page__content { grid-template-columns: 1fr; gap: 24px; } .contact-page__details, .contact-page__form { padding: 24px; } }

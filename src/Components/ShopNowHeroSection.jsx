@@ -8,7 +8,7 @@ const ShopNowHeroSection = ({ onShopNow }) => {
 
   return (
     <section className="hero-section">
-  <img src="/src/assets/ShopnowHero2.png" alt="Power That Moves With You" className="hero-img" />
+  <img src="/images/ShopnowHero2.png" alt="Power That Moves With You" className="hero-img" />
   <div className="hero-overlay" />
   <div className="hero-content">
     <h1 className="hero-title">Power That Moves <br /> With You</h1>

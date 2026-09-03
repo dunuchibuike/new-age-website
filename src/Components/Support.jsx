@@ -15,7 +15,7 @@ const Support = () => {
           <h1 className='support-text'>Support Page</h1>
         </div>
 
-        <div className="faq-container">
+        <div className="faq-container" id="faq">
           <div className="faq-sidebar">
             <h2 className="faq-main-title">Frequently<br />Asked Questions</h2>
             <p className="faq-subtitle">

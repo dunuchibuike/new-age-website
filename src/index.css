@@ -5,3 +5,364 @@
   --whatsappbuttoncolor:#25D366;
    --font-family: Arial, Helvetica, sans-serif;
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .fixed-header-container {
+    position: relative;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .second-header-article-container,
+  .third-semi-container {
+    width: 100%;
+    height: auto;
+    padding: 14px 16px;
+  }
+
+  .second-header-article-container {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .second-header-article-container > div:first-child {
+    flex: 1 1 auto;
+  }
+
+  .second-header-article-container > div:first-child img {
+    width: min(150px, 42vw);
+    display: block;
+  }
+
+  .second-header-article-container ul {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .second-header-article-container ul li {
+    flex: 0 0 auto;
+    font-size: 14px;
+  }
+
+  .third-header-article {
+    gap: 12px;
+  }
+
+  .third-semi-container {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .filter-container,
+  .sort-container {
+    font-size: 14px;
+  }
+
+  .search-container {
+    order: 3;
+    flex: 1 1 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-picture {
+    height: auto;
+    min-height: 240px;
+    object-fit: cover;
+  }
+
+  .hero-section {
+    height: min(70vh, 520px);
+    min-height: 360px;
+  }
+
+  .hero-content {
+    left: 16px;
+    right: 16px;
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-desc br {
+    display: none;
+  }
+
+  .sn-section,
+  .bs-section {
+    padding: 32px 16px;
+  }
+
+  .sn-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .sn-info,
+  .bs-info {
+    padding: 12px;
+  }
+
+  .sn-actions,
+  .bs-actions {
+    flex-wrap: wrap;
+  }
+
+  .sn-btn-cart,
+  .bs-btn-cart {
+    min-width: 0;
+  }
+
+  .bs-outer {
+    gap: 8px;
+  }
+
+  .bs-card {
+    min-width: calc((100% - 8px) / 2);
+  }
+
+  .hiw-section,
+  .tm-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 44px 16px;
+  }
+
+  .hiw-left,
+  .tm-left {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hiw-card--featured {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .hiw-card--slim {
+    min-width: 0;
+  }
+
+  .hiw-card-title--vertical {
+    writing-mode: initial;
+    transform: none;
+  }
+
+  .tm-cards {
+    min-height: 180px;
+  }
+
+  .about-up,
+  .about-bottom,
+  .soulpodMainContainer {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .up-left,
+  .up-right,
+  .bottom-left,
+  .bottom-right,
+  .soulpodMediaGallery,
+  .soulpodInfoPanel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .up-left,
+  .bottom-left {
+    height: 280px;
+  }
+
+  .vision-wrapper {
+    padding: 20px 0;
+  }
+
+  .vision-card-left,
+  .vision-card-right {
+    width: min(340px, 100%);
+    transform: none;
+  }
+
+  .affiliate-hero {
+    height: 360px;
+  }
+
+  .affiliate-content,
+  .faq-container {
+    width: calc(100% - 32px);
+    max-width: none;
+  }
+
+  .hero-content h1,
+  .faq-header h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .blogMainLayout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px 16px;
+  }
+
+  .blogSidebar {
+    gap: 24px;
+  }
+
+  .cart-page {
+    width: 100%;
+    padding-inline: 12px;
+  }
+
+  .cart-table {
+    overflow-x: auto;
+  }
+
+  .cart-header,
+  .cart-row {
+    min-width: 560px;
+  }
+
+  .checkout-cons {
+    padding: 24px 16px;
+  }
+
+  .checkout-container {
+    padding: 20px 16px;
+  }
+
+  .progress-container,
+  .payment-top,
+  .other-options,
+  .button-group {
+    flex-wrap: wrap;
+  }
+
+  .form-grid,
+  .card-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .account-page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .account-holder {
+    height: auto;
+    padding: 32px 16px;
+  }
+
+  .account-container,
+  .settings-form,
+  .profile-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-section,
+  .settings-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .settings-left,
+  .settings-right {
+    width: 100%;
+  }
+
+  .title-section h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+    padding: 36px 20px 32px;
+  }
+
+  .footer-brand,
+  .footer-subscribe {
+    grid-column: 1 / -1;
+  }
+
+  .footer-divider {
+    width: calc(100% - 40px);
+    margin-inline: 20px;
+  }
+
+  .footer-bottom {
+    padding-inline: 20px;
+  }
+
+  .footer-big-logo img {
+    width: min(260px, 80vw);
+  }
+}
+
+@media (max-width: 420px) {
+  .sn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-card--featured {
+    grid-column: auto;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col {
+    grid-column: auto;
+  }
+}

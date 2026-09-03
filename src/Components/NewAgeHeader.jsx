@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useCart} from '../Context/CartContext'
 import "../CSS/Header.css"
 import { useNavigate } from 'react-router-dom'
 import { FaRegHeart } from 'react-icons/fa'
-import { MdOutlineShoppingCart, MdPerson } from 'react-icons/md'
+import { MdOutlineShoppingCart, MdPerson, MdMenu, MdClose } from 'react-icons/md'
 
 const NewAgeHeader = () => {
   const navigate = useNavigate()
   const { cart } = useCart()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const goTo = (path) => {
+    navigate(path)
+    setMenuOpen(false)
+  }
   const handleProfileClick = () => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -21,22 +26,32 @@ const NewAgeHeader = () => {
       <main className='second-header-container'>
             <article className='second-header-article-container'>
             <div>
-                <img src="/src/assets/New age Logo.svg" alt="" />
+                <img src="/images/New age Logo.svg" alt="" />
             </div>
 
 
-           <ul>
+           <button
+             className="mobile-menu-toggle"
+             type="button"
+             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+             aria-expanded={menuOpen}
+             onClick={() => setMenuOpen((open) => !open)}
+           >
+             {menuOpen ? <MdClose /> : <MdMenu />}
+           </button>
+
+           <ul className={menuOpen ? 'header-nav header-nav--open' : 'header-nav'}>
             <li
-            onClick={() => navigate('/')}
+            onClick={() => goTo('/')}
             >Home</li>
             <li
-            onClick={() => navigate('/Shop')}
+            onClick={() => goTo('/Shop')}
             >Shop Products</li>
             <li
-            onClick={() => navigate('/Aboutus')}
+            onClick={() => goTo('/Aboutus')}
             >About Us</li>
             <li
-            onClick={() => navigate('/Support')}
+            onClick={() => goTo('/Support')}
             >Support</li>
            </ul>
 

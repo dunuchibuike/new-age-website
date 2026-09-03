@@ -19,7 +19,7 @@ const LatestArticles = () => {
             <p className="la-card-date">March 9, 2026</p>
           </div>
           <div className="la-card-img-wrap">
-            <img src="/src/assets/Manonthe traffic.png" alt="Low Battery Anxiety" className="la-card-img" />
+            <img src="/images/Manonthe traffic.png" alt="Low Battery Anxiety" className="la-card-img" />
             <button className="la-read-btn">Read Article</button>
           </div>
         </div>
@@ -30,7 +30,7 @@ const LatestArticles = () => {
             <p className="la-card-date">March 9, 2026</p>
           </div>
           <div className="la-card-img-wrap">
-            <img src="/src/assets/ManwithPowerBank.png" alt="Jumpstarters" className="la-card-img" />
+            <img src="/images/ManwithPowerBank.png" alt="Jumpstarters" className="la-card-img" />
             <button className="la-read-btn">Read Article</button>
           </div>
         </div>
@@ -41,7 +41,7 @@ const LatestArticles = () => {
             <p className="la-card-date">March 9, 2026</p>
           </div>
           <div className="la-card-img-wrap">
-            <img src="/src/assets/WristWatch.png" alt="Smartwatches" className="la-card-img" />
+            <img src="/images/WristWatch.png" alt="Smartwatches" className="la-card-img" />
             <button className="la-read-btn">Read Article</button>
           </div>
         </div>

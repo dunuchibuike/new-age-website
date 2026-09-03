@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FiHeart, FiShoppingCart, FiRefreshCw } from 'react-icons/fi'
 import { FaWhatsapp, FaStar } from 'react-icons/fa'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useCart } from '../Context/CartContext'
 import '../CSS/ShopNow.css'
 
@@ -12,6 +12,7 @@ const ShopNow = () => {
   const [products, setProducts] = useState([])
   const [wishlist, setWishlist] = useState([])
   const [loading, setLoading] = useState(false)
+  const [searchParams] = useSearchParams()
   const nav = useNavigate()
   const { addToCart } = useCart()
 
@@ -49,10 +50,22 @@ const ShopNow = () => {
 
   if (loading) return <p className="pc-loading">Loading products...</p>
 
+  const normalizeCategory = (category) => category?.toLowerCase().replace(/s$/, '')
+  const selectedCategory = normalizeCategory(searchParams.get('category'))
+  const searchQuery = searchParams.get('query')?.trim().toLowerCase() || ''
+  const visibleProducts = products.filter(product => {
+    const categoryMatches = !selectedCategory || normalizeCategory(product.productCategory) === selectedCategory
+    const searchableText = [product.productName, product.productCategory, product.productDescription]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+    return categoryMatches && (!searchQuery || searchableText.includes(searchQuery))
+  })
+
   return (
     <section className="sn-section">
       <div className="sn-grid">
-        {products.map(product => (
+        {visibleProducts.map(product => (
           <div className="sn-card" key={product._id}>
 
             <div className="sn-image-box">
@@ -94,6 +107,9 @@ const ShopNow = () => {
           </div>
         ))}
       </div>
+      {!visibleProducts.length && (
+        <p className="sn-empty-state">No products found for “{searchParams.get('query') || searchParams.get('category')}”.</p>
+      )}
     </section>
   )
 }

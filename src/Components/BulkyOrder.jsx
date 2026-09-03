@@ -1,5 +1,5 @@
 import React from 'react';
-import warrantyBadge from '../assets/warranty.png';
+const warrantyBadge = '/images/warranty.png'
 import '../CSS/BulkOrder.css';
 
 const BulkOrder = () => {

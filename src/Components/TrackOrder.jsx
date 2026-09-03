@@ -1,5 +1,5 @@
 import React from 'react';
-import trackpic from '../assets/trackpic.png';
+const trackpic = '/images/trackpic.png'
 import '../CSS/TrackOrder.css';
 
 const TrackOrder = () => {

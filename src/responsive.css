@@ -1,0 +1,778 @@
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .second-header-article-container {
+    position: relative;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+  }
+
+  .fixed-header-container {
+    position: relative;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .second-header-article-container,
+  .third-semi-container {
+    width: 100%;
+    height: auto;
+    padding: 14px 16px;
+  }
+
+  .second-header-article-container {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .second-header-article-container > div:first-child {
+    flex: 1 1 auto;
+  }
+
+  .second-header-article-container > div:first-child img {
+    width: min(150px, 42vw);
+    display: block;
+  }
+
+  .second-header-article-container .header-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px 16px;
+    background: #fff;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, .12);
+  }
+
+  .second-header-article-container .header-nav--open {
+    display: flex;
+  }
+
+  .second-header-article-container .header-nav li {
+    width: 100%;
+    padding: 13px 4px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+  }
+
+  .third-header-article {
+    order: 3;
+    gap: 12px;
+  }
+
+  .third-semi-container {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .search-container {
+    order: 3;
+    flex: 1 1 100%;
+  }
+
+  /* Input is wrapped by the reusable Input component, so both the wrapper
+     and the field need to flex for the search bar to use the full row. */
+  .search-container > div {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-picture {
+    display: block;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1440 / 553;
+    object-fit: contain;
+    background: #fff6f2;
+  }
+
+  .hero-section {
+    height: min(70vh, 520px);
+    min-height: 360px;
+  }
+
+  .hero-content {
+    left: 16px;
+    right: 16px;
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-desc br {
+    display: none;
+  }
+
+  .sn-section,
+  .bs-section {
+    padding: 32px 16px;
+  }
+
+  .sn-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .sn-info,
+  .bs-info {
+    padding: 12px;
+  }
+
+  .sn-actions,
+  .bs-actions {
+    flex-wrap: wrap;
+  }
+
+  .bs-outer {
+    gap: 8px;
+  }
+
+  .bs-card {
+    min-width: calc((100% - 8px) / 2);
+  }
+
+  .hiw-section,
+  .tm-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 44px 16px;
+  }
+
+  .hiw-left,
+  .tm-left {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hiw-card--featured {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .hiw-card--slim {
+    min-width: 0;
+  }
+
+  .hiw-card-title--vertical {
+    writing-mode: initial;
+    transform: none;
+  }
+
+  .tm-cards {
+    min-height: 180px;
+  }
+
+  .about-up,
+  .about-bottom,
+  .soulpodMainContainer {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .up-left,
+  .up-right,
+  .bottom-left,
+  .bottom-right,
+  .soulpodMediaGallery,
+  .soulpodInfoPanel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .up-left,
+  .bottom-left {
+    height: 280px;
+  }
+
+  .vision-card-left,
+  .vision-card-right {
+    width: min(340px, 100%);
+    transform: none;
+  }
+
+  .affiliate-hero {
+    height: 360px;
+  }
+
+  .affiliate-content,
+  .faq-container {
+    width: calc(100% - 32px);
+    max-width: none;
+  }
+
+  .hero-content h1,
+  .faq-header h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .blogMainLayout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px 16px;
+  }
+
+  .cart-page {
+    width: 100%;
+    padding-inline: 12px;
+  }
+
+  .cart-table {
+    overflow-x: auto;
+  }
+
+  .cart-header,
+  .cart-row {
+    min-width: 560px;
+  }
+
+  .checkout-cons {
+    padding: 24px 16px;
+  }
+
+  .checkout-container {
+    padding: 20px 16px;
+  }
+
+  .progress-container,
+  .payment-top,
+  .other-options,
+  .button-group {
+    flex-wrap: wrap;
+  }
+
+  .form-grid,
+  .card-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .account-page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .account-holder {
+    height: auto;
+    padding: 32px 16px;
+  }
+
+  .account-container,
+  .settings-form,
+  .profile-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-section,
+  .settings-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .settings-left,
+  .settings-right {
+    width: 100%;
+  }
+
+  .title-section h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+    padding: 36px 20px 32px;
+  }
+
+  .footer-brand,
+  .footer-subscribe {
+    grid-column: 1 / -1;
+  }
+
+  .footer-divider {
+    width: calc(100% - 40px);
+    margin-inline: 20px;
+  }
+
+  .footer-bottom {
+    padding-inline: 20px;
+  }
+
+  .footer-big-logo img {
+    width: min(260px, 80vw);
+  }
+
+  .subhero-pic-container {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .subhero-text {
+    margin: 2rem 16px 0;
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .pic-container {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .image2, .image3 {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .banner-section { padding: 28px 16px; }
+  .banner-wrap { width: 100%; height: auto; min-height: 320px; }
+  .banner-overlay { padding: 28px 18px; }
+  .banner-title { font-size: clamp(1.65rem, 8vw, 2.25rem); }
+
+  .support-banner, .blogbanner { min-height: 150px; font-size: 2rem; }
+  .blogtext { font-size: clamp(2rem, 10vw, 2.6rem); }
+  .faq-container { grid-template-columns: 1fr; gap: 28px; margin: 36px auto; }
+  .faq-header { padding: 18px 16px; }
+  .faq-answer { padding: 0 16px 18px; }
+
+  .policyGrid, .warrantyContent { grid-template-columns: 1fr; gap: 24px; }
+  .returnPolicySection, .warranty { margin-top: 3rem; }
+  .policyHeader, .warrantyHeader { margin-bottom: 2rem; }
+  .featuredCard { padding: 2.5rem 2rem; }
+  .warrantyList { gap: 1.5rem; }
+  .contactCtaSection { margin: 3rem auto; padding: 0 16px; }
+  .contactCtaCard { padding: 3.5rem 1.25rem; }
+
+  .shippingSection { padding: 36px 16px; }
+  .shippingContentWrapper { flex-direction: column; gap: 28px; }
+  .shippingSidebar { width: 100%; padding-top: 0; gap: 12px; }
+  .shippingMainTitle { white-space: normal; }
+  .shippingSubtitle { max-width: 34rem; }
+  .shippingGrid { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: initial; }
+  .infoCard { min-height: 175px; padding: 16px 12px 0; }
+  .cardHeader { font-size: 1rem; margin-bottom: 1rem; }
+  .cardText { font-size: .85rem; }
+  .bgNumber { font-size: 105px; }
+
+  .likeSection, .blogDetailsLayout { padding: 32px 16px; }
+  .likeProductsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cardContentBody { padding: 14px 12px; }
+  .cardMediaHeader { min-height: 150px; padding: 16px 10px; }
+  .cardActionButtonsBar { flex-wrap: wrap; }
+  .cardAddToCartBtn { min-width: 100%; order: 3; }
+
+  .confirmationSection { padding: 24px 16px; }
+  .stepperContainer { margin-bottom: 36px; }
+  .stepItem { padding: 12px 6px; gap: 5px; flex-direction: column; text-align: center; }
+  .stepText { font-size: 11px; }
+  .stepArrow { display: none; }
+  .successBadge { width: 96px; height: 96px; margin-bottom: 18px; }
+  .greenCheckIcon { font-size: 56px; }
+  .confirmationTitle { font-size: 27px; }
+  .continueShoppingBtn { margin-bottom: 42px; }
+  .featuresFooterGrid { grid-template-columns: 1fr; gap: 12px; }
+  .featureFooterDesc { white-space: normal; }
+
+  .soulpodDetailPage { padding: 20px 16px; }
+  .breadcrumbNav { white-space: nowrap; overflow-x: auto; padding-bottom: 8px; }
+  .mainPreviewWrapper { min-height: 300px; }
+  .soulpodMainHeading { font-size: clamp(1.8rem, 8vw, 2.25rem); }
+  .cartActionsControlBar { flex-wrap: wrap; }
+  .quantityCounterWidget { flex: 0 0 auto; }
+  .secondaryCartActionBtn, .primaryCheckoutActionBtn { min-width: calc(50% - 8px); }
+
+  .checkout-btn, .note-textarea { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .sn-grid,
+  .hiw-steps,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-card--featured,
+  .footer-col {
+    grid-column: auto;
+  }
+
+  .second-header-article-container { padding: 10px 14px; }
+  .third-header-article svg { width: 24px; height: 24px; }
+  .shippingGrid, .likeProductsGrid { grid-template-columns: 1fr; }
+  .infoCard { min-height: 150px; }
+  .policyCard { padding: 2rem 1.25rem; }
+  .warranty { padding-inline: 16px; }
+  .warrantyItem { gap: .9rem; }
+  .secondaryCartActionBtn, .primaryCheckoutActionBtn { min-width: 0; flex: 1 1 100%; }
+}
+
+/* Shared page-level safeguards for the remaining content pages.  Keeping these
+   together prevents individual pages from falling back to desktop geometry. */
+@media (max-width: 768px) {
+  .header-second-container {
+    min-height: 40px;
+    height: auto;
+    padding: 9px 16px;
+  }
+
+  .header-first-text {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .about-content {
+    width: 100%;
+    gap: 28px;
+    padding: 20px 16px 0;
+  }
+
+  .about-mid {
+    height: auto;
+  }
+
+  .vision-wrapper {
+    height: auto;
+    padding: 12px 0 28px;
+  }
+
+  .vision-title {
+    font-size: clamp(1.75rem, 8vw, 2.35rem);
+    text-align: center;
+  }
+
+  .vision-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vision-image {
+    order: -1;
+    width: min(280px, 78vw);
+    height: min(360px, 96vw);
+  }
+
+  .up-left img,
+  .bottom-left img {
+    object-fit: cover;
+  }
+
+  .up-right,
+  .bottom-right {
+    height: auto;
+    padding: 20px 4px;
+  }
+
+  .up-right h3,
+  .bottom-right h2 {
+    font-size: 1.7rem;
+  }
+
+  .up-right p,
+  .bottom-right p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .faq-container {
+    padding-inline: 0;
+  }
+
+  .faq-sidebar {
+    gap: 14px;
+  }
+
+  .faq-main-title {
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+  }
+
+  .faq-cta-card,
+  .faq-header,
+  .faq-answer {
+    padding-inline: 16px;
+  }
+
+  .faq-header {
+    padding-block: 18px;
+  }
+
+  .faq-question {
+    min-width: 0;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .trackOrderSection {
+    padding: 40px 16px;
+  }
+
+  .trackOrderContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .trackOrderLeft,
+  .trackOrderRight {
+    max-width: none;
+    width: 100%;
+  }
+
+  .trackOrderTitle {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .trackOrderSubtitle {
+    margin-bottom: 24px;
+  }
+
+  .trackOrderRight {
+    justify-content: center;
+  }
+
+  .trackImgAsset {
+    max-width: 420px;
+  }
+
+  .trackInputWrapper {
+    align-items: stretch;
+  }
+
+  .trackInputField {
+    min-width: 0;
+    padding-inline: 10px;
+  }
+
+  .trackSubmitBtn {
+    padding: 12px 16px;
+  }
+
+  .bulkOrderSection,
+  .blogDetailsLayout {
+    padding: 32px 16px;
+  }
+
+  .tableContainer {
+    align-items: stretch;
+    margin-bottom: 48px;
+    padding: 18px 0;
+    overflow-x: auto;
+  }
+
+  .tableMainTitle {
+    padding-inline: 16px;
+    margin-bottom: 18px;
+  }
+
+  .priceListTable {
+    min-width: 520px;
+  }
+
+  .priceListTable th,
+  .priceListTable td {
+    padding: 14px 16px;
+  }
+
+  .protectedWarrantyTitle {
+    font-size: 1.7rem;
+  }
+
+  .blogPostTitle {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .blogDetailsBody {
+    gap: 24px;
+  }
+
+  .blogMetaFooter {
+    flex-wrap: wrap;
+  }
+
+  .commentTextAreaField {
+    max-width: none;
+  }
+
+  .la-section {
+    padding: 40px 16px;
+  }
+
+  .la-header {
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .la-title {
+    font-size: 1.45rem;
+  }
+
+  .la-view-btn {
+    padding: 9px 12px;
+    font-size: .8rem;
+  }
+
+  .la-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .login-page {
+    align-items: flex-start;
+    padding: 32px 16px;
+  }
+
+  .login-box {
+    max-width: 460px;
+    padding: 24px 0;
+  }
+
+  .signup-page {
+    align-items: flex-start;
+    padding: 20px 12px;
+  }
+
+  .signup-card {
+    border-radius: 14px;
+    padding: 30px 20px;
+  }
+
+  .signup-header {
+    margin-bottom: 26px;
+  }
+
+  .signup-title {
+    font-size: 1.8rem;
+  }
+
+  .soulpodMainContainer {
+    gap: 28px;
+  }
+
+  .thumbnailStrip {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+  }
+
+  .thumbItem {
+    flex: 0 0 64px;
+  }
+
+  .specItemRow {
+    align-items: flex-start;
+  }
+
+  .specRowValueText {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .third-header-article {
+    gap: 8px;
+  }
+
+  .third-header-article svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .vision-card-left,
+  .vision-card-right {
+    padding: 28px 20px;
+    border-radius: 48px;
+  }
+
+  .vision-card-left h3,
+  .vision-card-right h3 {
+    font-size: 1.35rem;
+  }
+
+  .faq-cta-card {
+    padding: 22px 16px;
+  }
+
+  .faq-number {
+    width: 30px;
+    flex: 0 0 30px;
+  }
+
+  .faq-question {
+    font-size: .94rem;
+  }
+
+  .trackInputWrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .trackSubmitBtn {
+    width: 100%;
+  }
+
+  .la-header {
+    flex-direction: column;
+  }
+
+  .la-view-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-options {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .login-divider {
+    gap: 7px;
+  }
+
+  .login-divider p,
+  .divider-text {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .social-btn {
+    width: 48px;
+    height: 48px;
+  }
+}

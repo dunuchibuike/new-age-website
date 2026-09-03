@@ -204,3 +204,10 @@
   width: 100%;
   min-height: 100vh;
 }
+
+.sn-empty-state {
+  margin: 48px auto;
+  color: #5f5f5f;
+  font-size: 1rem;
+  text-align: center;
+}

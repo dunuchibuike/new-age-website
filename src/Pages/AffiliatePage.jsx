@@ -5,8 +5,7 @@ import HeaderText from "../Components/HeaderText";
 import NewAgeHeader from "../Components/NewAgeHeader";
 import Footer from "../Components/Footer";
 import "../CSS/Affiliate.css";
-import Affiliate from "../assets/Affiliate.jpg";
-
+const Affiliate = '/images/Affiliate.jpg'
 const AffiliatePage = () => {
   const [openIndex, setOpenIndex] = useState(0);
 

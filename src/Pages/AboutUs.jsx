@@ -3,10 +3,9 @@ import "../CSS/About.css";
 import HeaderText from "../Components/HeaderText";
 import NewAgeHeader from "../Components/NewAgeHeader";
 import Footer from "../Components/Footer";
-import team from "../assets/team.PNG";
-import Teams from "../assets/Teams.jpg";
-import Customer from "../assets/Customer.jpg";
-
+const team = '/images/team.PNG'
+const Teams = '/images/Teams.jpg'
+const Customer = '/images/Customer.jpg'
 const AboutUs = () => {
   return (
     <main className="about-container">

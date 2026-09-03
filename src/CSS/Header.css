@@ -98,6 +98,8 @@ ul{
     background-color: black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .cart-icon-wrap {
@@ -134,4 +136,15 @@ ul{
 /* Optional padding wrapper for injected child elements */
 .header-content-slot {
   padding: 10px 20px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: #111;
+  padding: 6px;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
 }

@@ -1,10 +1,24 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { SlEqualizer } from "react-icons/sl";
 import { TbArrowsSort } from "react-icons/tb";
 import { IoIosSearch } from "react-icons/io";
-import Input from '../Props/Input';
 import "../CSS/Header.css"
 const FilterByHeader = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setSearchTerm(searchParams.get('query') || '')
+  }, [searchParams])
+
+  const handleSearch = (event) => {
+    event.preventDefault()
+    const query = searchTerm.trim()
+    navigate(query ? `/shop?query=${encodeURIComponent(query)}` : '/shop')
+  }
+
   return (
     <>
         <section className='third-header-container'>
@@ -16,12 +30,12 @@ const FilterByHeader = () => {
                 </main>
 
 
-                <div className='search-container'>
-                    <Input type="text" placeholder="Type here" className="search-input"/>
-                    <div className='searchiconcontainer'>
+                <form className='search-container' onSubmit={handleSearch} role="search">
+                    <input type="search" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Search products" className="search-input" aria-label="Search products" />
+                    <button type="submit" className='searchiconcontainer' aria-label="Search">
                     <IoIosSearch  size={22} className="search-icon"/>
-                    </div>
-                </div>
+                    </button>
+                </form>
 
 
                 <main className='sort-container'>

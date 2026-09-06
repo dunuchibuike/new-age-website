@@ -1020,3 +1020,26 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* These declarations deliberately follow the tablet rules above. */
+@media (max-width: 768px) {
+  html, body { overflow-x: clip; }
+  .featuresFooterGrid { grid-template-columns: minmax(0, 1fr); }
+  .featureFooterCard { width: 100%; min-width: 0; }
+  .shippingContentWrapper { flex-direction: column; gap: 28px; }
+  .shippingSidebar { width: 100%; padding-top: 0; }
+  .shippingMainTitle { white-space: normal; }
+  .shippingGrid { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tabsSection { padding: 36px 16px; }
+  .tabsHeaderNav { justify-content: flex-start; gap: 28px; overflow-x: auto; margin-bottom: 32px; }
+  .tabLinkItem { flex: 0 0 auto; font-size: 1rem; }
+  .paginationRowWrapper { flex-wrap: wrap; gap: 18px; padding: 28px 16px 56px; }
+  .paginationControlsBlock { max-width: 100%; overflow-x: auto; padding-bottom: 3px; }
+  .cart-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cart-header, .cart-row { min-width: 560px; }
+}
+
+@media (max-width: 420px) {
+  .shippingGrid { grid-template-columns: minmax(0, 1fr); }
+  .infoCard { min-height: 150px; }
+}

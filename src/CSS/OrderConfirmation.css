@@ -194,3 +194,21 @@
   margin: 0;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .confirmationSection { padding: 24px 16px 40px; }
+  .stepperContainer { margin-bottom: 36px; }
+  .stepItem { min-width: 0; padding: 12px 4px; gap: 5px; flex-direction: column; text-align: center; }
+  .stepText { font-size: 10px; line-height: 1.2; }
+  .stepArrow { display: none; }
+  .successBadge { width: 96px; height: 96px; margin-bottom: 18px; }
+  .greenCheckIcon { font-size: 56px; }
+  .confirmationTitle { font-size: clamp(1.65rem, 8vw, 2rem); text-align: center; }
+  .confirmationMessage { max-width: 31ch; line-height: 1.45; }
+  .emailNoticeText { max-width: 30ch; text-align: center; line-height: 1.45; }
+  .customerEmail { overflow-wrap: anywhere; text-align: center; }
+  .continueShoppingBtn { max-width: none; margin-bottom: 40px; }
+  .featuresFooterGrid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .featureFooterCard { min-width: 0; width: 100%; padding: 16px; }
+  .featureFooterDesc { white-space: normal; overflow-wrap: anywhere; }
+}

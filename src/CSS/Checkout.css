@@ -293,3 +293,16 @@
   transition: border-color 0.2s;
 }
 
+@media (max-width: 600px) {
+  .checkout-cons { padding: 20px 12px; }
+  .checkout-container { padding: 20px 14px; border-radius: 12px; }
+  .form-grid, .card-fields { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .full-width { grid-column: auto; }
+  .payment-top, .other-options, .button-group { flex-wrap: wrap; }
+  .other-options { gap: 12px 18px; }
+  .bank-transfer-details { padding: 14px 12px; }
+  .bank-transfer-details > div { flex-wrap: wrap; gap: 5px 10px; }
+  .bank-transfer-details span { min-width: 105px; }
+  .pay-btn, .back-btn { flex: 1 1 100%; width: 100%; }
+}
+

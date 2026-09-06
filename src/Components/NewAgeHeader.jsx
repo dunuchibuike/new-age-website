@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import {useCart} from '../Context/CartContext'
 import "../CSS/Header.css"
 import { useNavigate } from 'react-router-dom'
-import { FaRegHeart } from 'react-icons/fa'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { useWishlist } from '../Context/WishlistContext'
 import { MdOutlineShoppingCart, MdPerson, MdMenu, MdClose } from 'react-icons/md'
 
 const NewAgeHeader = () => {
   const navigate = useNavigate()
   const { cart } = useCart()
+  const { wishlist } = useWishlist()
   const [menuOpen, setMenuOpen] = useState(false)
   const goTo = (path) => {
     navigate(path)
@@ -57,7 +59,10 @@ const NewAgeHeader = () => {
 
 
            <article className='third-header-article'>
-            <FaRegHeart size={28} color="#000" onClick={() => navigate('/shop')} style={{ cursor: 'pointer' }} aria-label="Browse favourites" />
+            <button className="header-wishlist-button" type="button" onClick={() => navigate('/saved-items')} aria-label="View saved items">
+              {wishlist.length ? <FaHeart size={25} /> : <FaRegHeart size={28} />}
+              {wishlist.length > 0 && <span className="wishlist-count">{wishlist.length}</span>}
+            </button>
 
               <div className="cart-icon-wrap" onClick={() => navigate('/cart')}>
              <MdOutlineShoppingCart size={28} color="#000" />

@@ -21,6 +21,7 @@ import TrackOrderPage from "./Pages/TrackOrderPage";
 import ReturnPolicyPage from "./Pages/ReturnPolicyPage";
 import TermsPage from "./Pages/TermsPage";
 import ScrollToTop from "./Components/ScrollToTop";
+import WishlistPage from "./Pages/WishlistPage";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/track-order" element={<TrackOrderPage />} />
           <Route path="/return-policy" element={<ReturnPolicyPage />} />
           <Route path="/terms-and-conditions" element={<TermsPage />} />
+          <Route path="/saved-items" element={<WishlistPage />} />
 
           <Route
             path="/Shop"

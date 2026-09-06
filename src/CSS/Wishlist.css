@@ -1,0 +1,33 @@
+.wishlist-page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.wishlist-heading {
+  padding: 42px 40px 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.wishlist-heading h1 {
+  margin: 0;
+  color: #111;
+  font-size: 2rem;
+}
+
+.wishlist-heading p {
+  margin: 8px 0 0;
+  color: #666;
+}
+
+.wishlist-empty {
+  margin: 48px auto;
+  max-width: 480px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.wishlist-empty h2 { margin: 0 0 10px; }
+.wishlist-empty p { margin: 0; color: #666; }

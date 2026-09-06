@@ -4,19 +4,21 @@ import { FaWhatsapp, FaStar } from 'react-icons/fa'
 import axios from 'axios'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useCart } from '../Context/CartContext'
+import { useWishlist } from '../Context/WishlistContext'
 import '../CSS/ShopNow.css'
 
 const BaseUrl = import.meta.env.VITE_BASE_URL
 
-const ShopNow = () => {
+const ShopNow = ({ products: savedProducts }) => {
   const [products, setProducts] = useState([])
-  const [wishlist, setWishlist] = useState([])
   const [loading, setLoading] = useState(false)
   const [searchParams] = useSearchParams()
   const nav = useNavigate()
   const { addToCart } = useCart()
+  const { isSaved, toggleWishlist } = useWishlist()
 
   useEffect(() => {
+    if (savedProducts) return
     const getProducts = async () => {
       setLoading(true)
       try {
@@ -30,13 +32,7 @@ const ShopNow = () => {
       }
     }
     getProducts()
-  }, [])
-
-  const toggleWishlist = (id) => {
-    setWishlist(prev =>
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
-    )
-  }
+  }, [savedProducts])
 
   const handleAddToCart = (product) => {
     const token = localStorage.getItem('token')
@@ -53,7 +49,8 @@ const ShopNow = () => {
   const normalizeCategory = (category) => category?.toLowerCase().replace(/s$/, '')
   const selectedCategory = normalizeCategory(searchParams.get('category'))
   const searchQuery = searchParams.get('query')?.trim().toLowerCase() || ''
-  const visibleProducts = products.filter(product => {
+  const productList = savedProducts || products
+  const visibleProducts = productList.filter(product => {
     const categoryMatches = !selectedCategory || normalizeCategory(product.productCategory) === selectedCategory
     const searchableText = [product.productName, product.productCategory, product.productDescription]
       .filter(Boolean)
@@ -70,8 +67,8 @@ const ShopNow = () => {
 
             <div className="sn-image-box">
               <button
-                className={`sn-wishlist ${wishlist.includes(product._id) ? 'active' : ''}`}
-                onClick={() => toggleWishlist(product._id)}
+                className={`sn-wishlist ${isSaved(product._id) ? 'active' : ''}`}
+                onClick={() => toggleWishlist(product)}
               >
                 <FiHeart />
               </button>

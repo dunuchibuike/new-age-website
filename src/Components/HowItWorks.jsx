@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "../CSS/HowItWorks.css"
 const HowItWorks = () => {
+  const navigate = useNavigate()
   return (
     <div>
        <section class="hiw-section">
@@ -10,7 +12,7 @@ const HowItWorks = () => {
       <p class="hiw-desc">
         Easily browse, compare, and shop with tools designed to help you make the right choice faster.
       </p>
-      <button class="hiw-btn">Shop product &#128722;</button>
+      <button className="hiw-btn" type="button" onClick={() => navigate('/shop')}>Shop product &#128722;</button>
     </div>
  
     <div class="hiw-steps">

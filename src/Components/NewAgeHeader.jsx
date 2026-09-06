@@ -57,7 +57,7 @@ const NewAgeHeader = () => {
 
 
            <article className='third-header-article'>
-            <FaRegHeart size={28} color="#000" />
+            <FaRegHeart size={28} color="#000" onClick={() => navigate('/shop')} style={{ cursor: 'pointer' }} aria-label="Browse favourites" />
 
               <div className="cart-icon-wrap" onClick={() => navigate('/cart')}>
              <MdOutlineShoppingCart size={28} color="#000" />

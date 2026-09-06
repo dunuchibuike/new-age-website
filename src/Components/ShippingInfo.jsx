@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../CSS/ShippingInfo.css';
 
 const ShippingInfo = () => {
+  const navigate = useNavigate();
   return (
     <section className="shippingSection">
       <div className="shippingContentWrapper">
@@ -11,7 +13,7 @@ const ShippingInfo = () => {
           <p className="shippingSubtitle">
             Everything you need to know about delivery times, costs, and locations. 
           </p>
-          <button className="trackOrderBtn">Track Order</button>
+          <button className="trackOrderBtn" type="button" onClick={() => navigate('/track-order')}>Track Order</button>
         </div>
 
         <div className="shippingGrid">

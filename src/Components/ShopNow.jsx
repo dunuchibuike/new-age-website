@@ -99,8 +99,8 @@ const ShopNow = () => {
                 <button className="sn-btn-cart" onClick={() => handleAddToCart(product)}>
                   Add to Cart <FiShoppingCart />
                 </button>
-                <button className="sn-btn-icon sn-refresh"><FiRefreshCw /></button>
-                <button className="sn-btn-icon sn-whatsapp"><FaWhatsapp /></button>
+                <button className="sn-btn-icon sn-refresh" type="button" aria-label={`View ${product.productName}`} onClick={() => nav('/product-details')}><FiRefreshCw /></button>
+                <a className="sn-btn-icon sn-whatsapp" aria-label={`Ask about ${product.productName} on WhatsApp`} href={`https://wa.me/?text=${encodeURIComponent(`Hello, I would like to know more about ${product.productName}.`)}`} target="_blank" rel="noreferrer"><FaWhatsapp /></a>
               </div>
             </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useCart } from '../Context/CartContext'
@@ -8,6 +8,36 @@ import NewAgeHeader from '../Components/NewAgeHeader'
 import Footer from '../Components/Footer'
 
 const BaseUrl = import.meta.env.VITE_BASE_URL
+const isTestMode = import.meta.env.VITE_PAYMENT_TEST_MODE !== 'false'
+
+const onlyDigits = (value) => value.replace(/\D/g, '')
+
+const isValidCardNumber = (value) => {
+  const digits = onlyDigits(value)
+  if (digits.length < 13 || digits.length > 19) return false
+  let total = 0
+  let shouldDouble = false
+  for (let index = digits.length - 1; index >= 0; index -= 1) {
+    let digit = Number(digits[index])
+    if (shouldDouble) {
+      digit *= 2
+      if (digit > 9) digit -= 9
+    }
+    total += digit
+    shouldDouble = !shouldDouble
+  }
+  return total % 10 === 0
+}
+
+const isValidExpiry = (value) => {
+  const match = value.match(/^(0[1-9]|1[0-2])\/(\d{2})$/)
+  if (!match) return false
+  const expiry = new Date(2000 + Number(match[2]), Number(match[1]), 1)
+  const currentMonth = new Date()
+  currentMonth.setDate(1)
+  currentMonth.setHours(0, 0, 0, 0)
+  return expiry > currentMonth
+}
 
 const Checkout = () => {
   const nav = useNavigate()
@@ -27,9 +57,33 @@ const Checkout = () => {
   })
 
   const [loading, setLoading] = useState(false)
+  const [paymentMethod, setPaymentMethod] = useState('card')
+  const [card, setCard] = useState({ number: '', expiry: '', cvv: '' })
+  const [accountCopied, setAccountCopied] = useState(false)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleCardChange = (e) => {
+    const { name, value } = e.target
+    let nextValue = value
+    if (name === 'number') nextValue = onlyDigits(value).slice(0, 19).replace(/(.{4})/g, '$1 ').trim()
+    if (name === 'expiry') {
+      nextValue = onlyDigits(value).slice(0, 4)
+      if (nextValue.length > 2) nextValue = `${nextValue.slice(0, 2)}/${nextValue.slice(2)}`
+    }
+    if (name === 'cvv') nextValue = onlyDigits(value).slice(0, 4)
+    setCard({ ...card, [name]: nextValue })
+  }
+
+  const copyAccountNumber = async () => {
+    try {
+      await navigator.clipboard.writeText('0123456789')
+      setAccountCopied(true)
+    } catch {
+      setAccountCopied(false)
+    }
   }
 
   const handleOrder = async (e) => {
@@ -50,6 +104,12 @@ const Checkout = () => {
       return
     }
 
+    if (paymentMethod === 'card') {
+      if (!isValidCardNumber(card.number)) return alert('Enter a valid test card number')
+      if (!isValidExpiry(card.expiry)) return alert('Enter a valid future expiry date in MM/YY format')
+      if (!/^\d{3,4}$/.test(card.cvv)) return alert('Enter a valid 3 or 4 digit CVV')
+    }
+
     const payload = {
       customerId: user.id,
       email: form.email,
@@ -60,24 +120,29 @@ const Checkout = () => {
       }))
     }
 
-     console.log('TOKEN:', token)       
-  console.log('USER:', user)       
-  console.log('PAYLOAD:', payload) 
-
     setLoading(true)
     try {
-      const response = await axios.post(
+      // Test mode never sends card data or attempts a live charge.
+      if (isTestMode) {
+        sessionStorage.setItem('latestTestOrder', JSON.stringify({
+          id: 'TEST-ORDER', ...payload, amount: total, paymentMethod,
+          status: 'paid_test', createdAt: new Date().toISOString(),
+        }))
+        clearCart()
+        nav('/order-confirmation')
+        return
+      }
+
+      if (!BaseUrl) throw new Error('Payment service is not configured')
+      await axios.post(
         `${BaseUrl}/order/create-order`,
         payload,
         { headers: { Authorization: `Bearer ${token}` } }
       )
-      console.log('ORDER SUCCESS:', response.data)
       clearCart()
       nav('/order-confirmation')
     } catch (err) {
-      console.log('STATUS:', err.response?.status)
-      console.log('MESSAGE:', err.response?.data)
-      alert(`Order failed: ${err.response?.data?.message || 'Try again'}`)
+      alert(`Order failed: ${err.response?.data?.message || err.message || 'Try again'}`)
     } finally {
       setLoading(false)
     }
@@ -170,6 +235,7 @@ const Checkout = () => {
               </div>
 
               <div className="payment-section">
+                {isTestMode && <p className="payment-test-notice">Test mode: no money will be charged. Use any valid test-format card.</p>}
                 <div className="payment-top">
                   <h2 className="payment-title">Payment Method</h2>
                   <div className="card-icons">
@@ -180,33 +246,44 @@ const Checkout = () => {
                 </div>
 
                 <div className="card-check">
-                  <input type="checkbox" defaultChecked id="card" />
+                  <input type="radio" name="payment-method" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} id="card" />
                   <label htmlFor="card">Credit/Debit card</label>
                 </div>
 
-                <div className="card-fields">
+                <div className="card-fields" aria-disabled={paymentMethod !== 'card'}>
                   <div className="form-group full-width">
                     <label>Card Number</label>
-                    <input type="text" placeholder="Input Card Number" />
+                    <input type="text" name="number" value={card.number} onChange={handleCardChange} inputMode="numeric" autoComplete="cc-number" disabled={paymentMethod !== 'card'} placeholder="4242 4242 4242 4242" />
                   </div>
                   <div className="form-group">
                     <label>Expiry Date</label>
-                    <input type="text" placeholder="MM/YY" />
+                    <input type="text" name="expiry" value={card.expiry} onChange={handleCardChange} inputMode="numeric" autoComplete="cc-exp" disabled={paymentMethod !== 'card'} placeholder="MM/YY" />
                   </div>
                   <div className="form-group">
                     <label>CVV</label>
-                    <input type="text" placeholder="1" />
+                    <input type="text" name="cvv" value={card.cvv} onChange={handleCardChange} inputMode="numeric" autoComplete="cc-csc" disabled={paymentMethod !== 'card'} placeholder="123" />
                   </div>
                 </div>
 
                 <div className="other-payment">
                   <h2 className="other-title">Other Payment Method</h2>
                   <div className="other-options">
-                    <label><input type="checkbox" /> Korapay</label>
-                    <label><input type="checkbox" /> Pay stack</label>
-                    <label><input type="checkbox" /> Bank Transfer</label>
+                    <label><input type="radio" name="payment-method" checked={paymentMethod === 'korapay'} onChange={() => setPaymentMethod('korapay')} /> Korapay</label>
+                    <label><input type="radio" name="payment-method" checked={paymentMethod === 'paystack'} onChange={() => setPaymentMethod('paystack')} /> Paystack</label>
+                    <label><input type="radio" name="payment-method" checked={paymentMethod === 'bank_transfer'} onChange={() => setPaymentMethod('bank_transfer')} /> Bank Transfer</label>
                   </div>
                 </div>
+
+                {paymentMethod === 'bank_transfer' && (
+                  <section className="bank-transfer-details" aria-live="polite">
+                    <p className="bank-transfer-heading">Transfer to this test account</p>
+                    <div><span>Bank</span><strong>New Age Test Bank</strong></div>
+                    <div><span>Account name</span><strong>New Age Store (Test)</strong></div>
+                    <div><span>Account number</span><strong className="account-number">0123456789</strong><button type="button" className="copy-account-btn" onClick={copyAccountNumber}>{accountCopied ? 'Copied' : 'Copy'}</button></div>
+                    <div><span>Amount</span><strong>₦{total.toLocaleString()}</strong></div>
+                    <small>This is a test account. No real transfer is required—select Pay Now to complete the test order.</small>
+                  </section>
+                )}
 
                 <div className="button-group">
                   <button type="submit" className="pay-btn" disabled={loading}>
